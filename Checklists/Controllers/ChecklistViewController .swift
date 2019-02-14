@@ -8,11 +8,15 @@
 
 import UIKit
 
+
+
 class ChecklistViewController : UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        ChecklistItem(message: "test")
+        ChecklistItem(message: "Test",verif: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -22,14 +26,16 @@ class ChecklistViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
     
     let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
-      
-      //  currentCell = currentCell.textInputMode = "message"
+        
+
         cell.textLabel?.text = "message"
+    
+        
+    
         
         return cell
     }
-
-
-
+   
+   
 }
 
