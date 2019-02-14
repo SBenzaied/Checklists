@@ -35,9 +35,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084D61B52215A41300EE202E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08FF5C312215826200FEE647 /* Assets.xcassets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		084D61B62215A42C00EE202E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08FF5C2E2215826200FEE647 /* Main.storyboard */,
+				08FF5C332215826200FEE647 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		084D61B72215A42F00EE202E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08FF5C2C2215826200FEE647 /* ChecklistViewController .swift */,
+				08FF5C2A2215826200FEE647 /* AppDelegate.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		08FF5C1E2215826200FEE647 = {
 			isa = PBXGroup;
 			children = (
+				084D61B72215A42F00EE202E /* Controllers */,
+				084D61B62215A42C00EE202E /* Views */,
+				084D61B52215A41300EE202E /* Models */,
 				08FF5C292215826200FEE647 /* Checklists */,
 				08FF5C282215826200FEE647 /* Products */,
 			);
@@ -54,11 +83,6 @@
 		08FF5C292215826200FEE647 /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				08FF5C2A2215826200FEE647 /* AppDelegate.swift */,
-				08FF5C2C2215826200FEE647 /* ChecklistViewController .swift */,
-				08FF5C2E2215826200FEE647 /* Main.storyboard */,
-				08FF5C312215826200FEE647 /* Assets.xcassets */,
-				08FF5C332215826200FEE647 /* LaunchScreen.storyboard */,
 				08FF5C362215826200FEE647 /* Info.plist */,
 			);
 			path = Checklists;
