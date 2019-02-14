@@ -19,6 +19,10 @@ class ChecklistItem
         
         
     }
+    
+    func toggleChecked (){
+       verif = !verif
+    }
   
 }
 
