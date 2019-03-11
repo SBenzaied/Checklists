@@ -55,6 +55,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Add"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addDummytoDo:" destination="mCr-zr-STf" eventType="touchUpInside" id="13i-7i-zF2"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

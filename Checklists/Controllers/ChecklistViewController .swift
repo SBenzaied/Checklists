@@ -24,6 +24,14 @@ class ChecklistViewController : UITableViewController {
         tabCheckListItem.append(ChecklistItem(message: "MATCH",verif: true))
     }
     
+    @IBAction func addDummytoDo(_ sender: Any) {
+        tabCheckListItem.append(ChecklistItem(message: "Dummy",verif: true))
+        
+        tableView.reloadData()
+        
+        
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return tabCheckListItem.count
     }
