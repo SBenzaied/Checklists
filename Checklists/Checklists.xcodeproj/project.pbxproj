@@ -10,7 +10,7 @@
 		084D61B92215A56B00EE202E /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D61B82215A56B00EE202E /* ChecklistItem.swift */; };
 		08FF5C2B2215826200FEE647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF5C2A2215826200FEE647 /* AppDelegate.swift */; };
 		08FF5C2D2215826200FEE647 /* ChecklistViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF5C2C2215826200FEE647 /* ChecklistViewController .swift */; };
-		08FF5C302215826200FEE647 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08FF5C2E2215826200FEE647 /* Main.storyboard */; };
+		08FF5C302215826200FEE647 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08FF5C2E2215826200FEE647 /* Main.storyboard */; settings = {ASSET_TAGS = (Checklist, ); }; };
 		08FF5C322215826200FEE647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FF5C312215826200FEE647 /* Assets.xcassets */; };
 		08FF5C352215826200FEE647 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08FF5C332215826200FEE647 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -117,6 +117,9 @@
 		08FF5C1F2215826200FEE647 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Checklist,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = lpiem;
