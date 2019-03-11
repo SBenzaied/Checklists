@@ -36,6 +36,18 @@ class ChecklistViewController : UITableViewController {
         return tabCheckListItem.count
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            self.tabCheckListItem.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            // handle delete (by removing the data from your array and updating the tableview)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         //cell.textLabel?.text = "message"
