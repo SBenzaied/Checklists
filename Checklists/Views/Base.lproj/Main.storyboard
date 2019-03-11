@@ -48,7 +48,16 @@
                             <outlet property="delegate" destination="mCr-zr-STf" id="EUc-x2-Y7E"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kRr-4l-qeO"/>
+                    <navigationItem key="navigationItem" id="kRr-4l-qeO">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="tB0-p0-8Ig">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L8A-j2-NXs">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Add"/>
+                                <state key="normal" title="+"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSW-3A-Icv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +68,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Oz-Wp-1R7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uvl-VS-c2E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uvl-VS-c2E" userLabel="Checklist">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
