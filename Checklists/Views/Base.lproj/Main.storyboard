@@ -60,6 +60,7 @@
                                 <accessibility key="accessibilityConfiguration" label="test"/>
                                 <connections>
                                     <outlet property="TaskLabel" destination="olM-nu-X0m" id="i6v-Vk-huP"/>
+                                    <segue destination="Sld-cf-tq5" kind="presentation" identifier="editItem" trigger="accessoryAction" id="X0r-10-Qd8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -176,4 +177,7 @@
             <point key="canvasLocation" x="112.8" y="847.82608695652175"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="X0r-10-Qd8"/>
+    </inferredMetricsTieBreakers>
 </document>
