@@ -23,4 +23,11 @@ class AddItemViewController: UITableViewController {
       
         dismiss(animated: true, completion: nil)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        nameTextField.becomeFirstResponder()
+        
+    }
+    
+    
 }
