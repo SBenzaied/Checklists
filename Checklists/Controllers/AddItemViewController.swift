@@ -8,17 +8,19 @@
 
 import UIKit
 
+
 class AddItemViewController: UITableViewController,UITextFieldDelegate {
 
-    
 
+    var delegate : AddItemViewControllerDelegate!
     
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+         delegate.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
@@ -34,8 +36,10 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         nameTextField.becomeFirstResponder()
+        nameTextField.delegate=self
         
     }
+    
     
     
     func textField(_ textField: UITextField,shouldChangeCharactersIn range: NSRange,replacementString string: String) -> Bool {
@@ -54,3 +58,5 @@ protocol AddItemViewControllerDelegate : class {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController)
     func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem)
 }
+
+

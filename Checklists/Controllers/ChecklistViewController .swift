@@ -14,7 +14,7 @@ import UIKit
 class ChecklistViewController : UITableViewController {
     
   var tabCheckListItem=[ChecklistItem]()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,13 @@ class ChecklistViewController : UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC = segue.destination as! UINavigationController
+        
+        let destVC=navVC.topViewController as! AddItemViewController
+        destVC.delegate=self
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tabCheckListItem[indexPath.row].toggleChecked()
         
@@ -86,3 +93,16 @@ class ChecklistViewController : UITableViewController {
    
 }
 
+extension ChecklistViewController : AddItemViewControllerDelegate{
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+            dismiss(animated: true, completion: nil)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+      
+        
+    }
+    
+    
+    
+}
