@@ -10,6 +10,7 @@ import UIKit
 
 class AddItemViewController: UITableViewController,UITextFieldDelegate {
 
+    
 
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -49,3 +50,7 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
 }
 
 
+protocol AddItemViewControllerDelegate : class {
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController)
+    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem)
+}
