@@ -12,10 +12,9 @@ import UIKit
 
 
 class ChecklistViewController : UITableViewController {
-    
+   var itemToEdit : ChecklistItem? = nil
   var tabCheckListItem=[ChecklistItem]()
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,12 +58,34 @@ class ChecklistViewController : UITableViewController {
         return cell
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let navVC = segue.destination as! UINavigationController
+//
+//        let destVC=navVC.topViewController as! AddItemViewController
+//
+//        destVC.delegate=self
+//    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC = segue.destination as! UINavigationController
-        
-        let destVC=navVC.topViewController as! AddItemViewController
-        destVC.delegate=self
+        if (segue.identifier == "addItem"){
+            let navigation = segue.destination as! UINavigationController
+            let delegateVC = navigation.topViewController as! AddItemViewController
+            delegateVC.itemToEdit = nil
+            delegateVC.delegate = self
+        }
+        else if (segue.identifier == "editItem"){
+            let nav = segue.destination as! UINavigationController
+            let delegateVC = nav.topViewController as! AddItemViewController
+            let cell = sender as! ChecklistItemCell
+            let index = tableView.indexPath(for: cell)
+            itemToEdit = tabCheckListItem[index!.row]
+            
+            delegateVC.itemToEdit = itemToEdit
+            delegateVC.delegate = self
+        }
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tabCheckListItem[indexPath.row].toggleChecked()
@@ -97,6 +118,15 @@ extension ChecklistViewController : AddItemViewControllerDelegate{
     
     func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
       
+        
+        
+        
+    }
+    
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: ChecklistItem)
+ {
+        
         
     }
     

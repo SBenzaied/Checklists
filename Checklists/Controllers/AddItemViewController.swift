@@ -13,6 +13,7 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
 
 
     var delegate : AddItemViewControllerDelegate!
+    var itemToEdit : ChecklistItem?
     
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -51,12 +52,26 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.doneButton.isEnabled = false
+        print(itemToEdit as Any)
+        if(itemToEdit != nil){
+            nameTextField.text = itemToEdit?.message
+            self.title = "Edit an item"
+        }
+        
+    }
+    
+    
 }
 
 
 protocol AddItemViewControllerDelegate : class {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController)
     func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: ChecklistItem)
+
 }
 
 
