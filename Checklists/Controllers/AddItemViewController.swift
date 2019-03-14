@@ -10,11 +10,17 @@ import UIKit
 
 class AddItemViewController: UITableViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func done(_ sender: Any) {
-         dismiss(animated: true, completion: nil)
+        
+        print(nameTextField.text ?? "lin")
+        
+      
+        dismiss(animated: true, completion: nil)
     }
 }
