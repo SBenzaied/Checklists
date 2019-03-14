@@ -84,9 +84,10 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done:" destination="Sld-cf-tq5" eventType="editingDidEndOnExit" id="nau-74-QbX"/>
+                                                        <outlet property="delegate" destination="Sld-cf-tq5" id="EPi-5v-zhR"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -113,6 +114,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="g87-LS-PF1" id="7k9-ui-EpW"/>
                         <outlet property="nameTextField" destination="WoG-Lj-y3t" id="eZH-iw-He5"/>
                     </connections>
                 </tableViewController>

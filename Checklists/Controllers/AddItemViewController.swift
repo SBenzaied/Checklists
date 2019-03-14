@@ -8,9 +8,13 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController {
+class AddItemViewController: UITableViewController,UITextFieldDelegate {
 
+
+    
     @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -18,11 +22,14 @@ class AddItemViewController: UITableViewController {
     
     @IBAction func done(_ sender: Any) {
         
-        print(nameTextField.text ?? "lin")
-        
-      
-        dismiss(animated: true, completion: nil)
+       
+        if nameTextField.text == ""
+        {self.doneButton.isEnabled = false}
+            
+    else{print(nameTextField.text ?? "lin")
+                dismiss(animated: true, completion: nil)}
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         nameTextField.becomeFirstResponder()
@@ -30,4 +37,15 @@ class AddItemViewController: UITableViewController {
     }
     
     
+    func textField(_ textField: UITextField,shouldChangeCharactersIn range: NSRange,replacementString string: String) -> Bool {
+        
+        let oldString = nameTextField.text!
+        let newString = oldString.replacingCharacters(in: Range(range, in:oldString)!, with: string)
+        self.doneButton.isEnabled = !newString.isEmpty
+        return true
+    }
+    
+    
 }
+
+
