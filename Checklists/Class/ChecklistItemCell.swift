@@ -11,6 +11,7 @@ import UIKit
 class ChecklistItemCell: UITableViewCell {
 
     
+  
     @IBOutlet weak var checkLabel: UILabel!
     
 

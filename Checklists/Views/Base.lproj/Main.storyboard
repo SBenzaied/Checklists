@@ -60,6 +60,7 @@
                                 <accessibility key="accessibilityConfiguration" label="test"/>
                                 <connections>
                                     <outlet property="TaskLabel" destination="olM-nu-X0m" id="i6v-Vk-huP"/>
+                                    <outlet property="checkLabel" destination="WA2-B6-Elb" id="5Xh-t5-X8b"/>
                                     <segue destination="Sld-cf-tq5" kind="presentation" identifier="editItem" trigger="accessoryAction" id="X0r-10-Qd8"/>
                                 </connections>
                             </tableViewCell>

@@ -53,8 +53,8 @@ class ChecklistViewController : UITableViewController {
         //cell.textLabel?.text = "message"
         
         
-        configureText(for: cell, withItem: tabCheckListItem[indexPath.row])
-        configureCheckmark(for: cell, withItem: tabCheckListItem[indexPath.row])
+        configureText(for: cell as! ChecklistItemCell, withItem: tabCheckListItem[indexPath.row])
+        configureCheckmark(for: cell as! ChecklistItemCell, withItem: tabCheckListItem[indexPath.row])
    
         return cell
     }
@@ -73,16 +73,13 @@ class ChecklistViewController : UITableViewController {
         tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
-    func configureCheckmark(for cell: UITableViewCell, withItem item: ChecklistItem){
-        if item.verif == false{
-            cell.accessoryType = .none
-        }
-        else{cell.accessoryType = .checkmark}
+    func configureCheckmark(for cell: ChecklistItemCell, withItem item: ChecklistItem){
+        cell.checkLabel.isHidden = !item.verif
         
         
     }
-    func configureText(for cell: UITableViewCell, withItem item: ChecklistItem){
-        cell.textLabel?.text=item.message
+    func configureText(for cell: ChecklistItemCell, withItem item: ChecklistItem){
+        cell.TaskLabel.text=item.message
     }
     
     
