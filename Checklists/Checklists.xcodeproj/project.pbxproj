@@ -67,9 +67,17 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		08E9BA93223A90F100271F3B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		08FF5C1E2215826200FEE647 = {
 			isa = PBXGroup;
 			children = (
+				08E9BA93223A90F100271F3B /* Class */,
 				084D61B72215A42F00EE202E /* Controllers */,
 				084D61B62215A42C00EE202E /* Views */,
 				084D61B52215A41300EE202E /* Models */,
