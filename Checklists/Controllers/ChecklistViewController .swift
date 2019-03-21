@@ -70,13 +70,13 @@ class ChecklistViewController : UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addItem"){
             let navigation = segue.destination as! UINavigationController
-            let delegateVC = navigation.topViewController as! AddItemViewController
+            let delegateVC = navigation.topViewController as! ItemDetailViewController
             delegateVC.itemToEdit = nil
             delegateVC.delegate = self
         }
         else if (segue.identifier == "editItem"){
             let nav = segue.destination as! UINavigationController
-            let delegateVC = nav.topViewController as! AddItemViewController
+            let delegateVC = nav.topViewController as! ItemDetailViewController
             let cell = sender as! ChecklistItemCell
             let index = tableView.indexPath(for: cell)
             itemToEdit = tabCheckListItem[index!.row]
@@ -112,11 +112,11 @@ class ChecklistViewController : UITableViewController {
 }
 
 extension ChecklistViewController : AddItemViewControllerDelegate{
-    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+    func addItemViewControllerDidCancel(_ controller: ItemDetailViewController) {
             dismiss(animated: true, completion: nil)
     }
     
-    func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAddingItem item: ChecklistItem) {
       
         
         print("Ok",item.message)
@@ -134,7 +134,7 @@ extension ChecklistViewController : AddItemViewControllerDelegate{
     }
     
     
-    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: ChecklistItem)
+    func addItemViewController(_ controller: ItemDetailViewController, didFinishEditingItem item: ChecklistItem)
  {
         
     print("new text",item.message)
