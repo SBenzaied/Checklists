@@ -8,34 +8,51 @@
 
 import UIKit
 
+
 class AddItemViewController: UITableViewController,UITextFieldDelegate {
 
-    
 
+    var delegate : AddItemViewControllerDelegate!
+    var itemToEdit : ChecklistItem?
     
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+         delegate.addItemViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: Any) {
         
-       
+        
+        
+        
+        
         if nameTextField.text == ""
         {self.doneButton.isEnabled = false}
             
     else{print(nameTextField.text ?? "lin")
                 dismiss(animated: true, completion: nil)}
+        
+        
+        if(itemToEdit == nil){let newItem = ChecklistItem(message: nameTextField.text!)
+            delegate?.addItemViewController(self, didFinishAddingItem: newItem)}
+        else{
+            itemToEdit?.message=nameTextField.text! 
+            delegate?.addItemViewController(self, didFinishEditingItem: itemToEdit!)}
+        
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         nameTextField.becomeFirstResponder()
+        nameTextField.delegate=self
         
     }
+    
     
     
     func textField(_ textField: UITextField,shouldChangeCharactersIn range: NSRange,replacementString string: String) -> Bool {
@@ -47,10 +64,26 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
     }
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.doneButton.isEnabled = false
+        print(itemToEdit as Any)
+        if(itemToEdit != nil){
+            nameTextField.text = itemToEdit?.message
+            self.title = "Edit an item"
+        }
+        
+    }
+    
+    
 }
 
 
 protocol AddItemViewControllerDelegate : class {
     func addItemViewControllerDidCancel(_ controller: AddItemViewController)
     func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem)
+    func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: ChecklistItem)
+
 }
+
+
