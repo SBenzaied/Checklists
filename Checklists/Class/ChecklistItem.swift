@@ -6,9 +6,9 @@
 //  Copyright © 2019 lpiem. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class ChecklistItem
+class ChecklistItem : Codable
 {
     var message :String
     var verif   :Bool
