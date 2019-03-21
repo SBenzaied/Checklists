@@ -104,6 +104,16 @@ class ChecklistViewController : UITableViewController {
             delegateVC.itemToEdit = itemToEdit
             delegateVC.delegate = self
         }
+        
+        else if (segue.identifier == "Name of the list"){
+            
+            let navigation = segue.destination as! UINavigationController
+            let delegateVC = navigation.topViewController as! ItemDetailViewController
+            delegateVC.itemToEdit = nil
+            delegateVC.delegate = self
+            
+            
+        }
     }
     
     
