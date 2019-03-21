@@ -26,12 +26,24 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
     
     @IBAction func done(_ sender: Any) {
         
-       
+        
+        
+        
+        
         if nameTextField.text == ""
         {self.doneButton.isEnabled = false}
             
     else{print(nameTextField.text ?? "lin")
                 dismiss(animated: true, completion: nil)}
+        
+        
+        if(itemToEdit == nil){let newItem = ChecklistItem(message: nameTextField.text!)
+            delegate?.addItemViewController(self, didFinishAddingItem: newItem)}
+        else{
+            itemToEdit?.message=nameTextField.text! 
+            delegate?.addItemViewController(self, didFinishEditingItem: itemToEdit!)}
+        
+        
     }
     
     

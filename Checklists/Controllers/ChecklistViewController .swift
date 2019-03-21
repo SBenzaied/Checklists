@@ -119,6 +119,16 @@ extension ChecklistViewController : AddItemViewControllerDelegate{
     func addItemViewController(_ controller: AddItemViewController, didFinishAddingItem item: ChecklistItem) {
       
         
+        print("Ok",item.message)
+        item.verif=false
+        
+        
+        tabCheckListItem.append(ChecklistItem(message: item.message))
+        tableView.insertRows(at: [IndexPath(row: tabCheckListItem.count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
+             tableView.reloadData()
+        dismiss(animated: true, completion: nil)
+        
+        
         
         
     }
@@ -127,7 +137,11 @@ extension ChecklistViewController : AddItemViewControllerDelegate{
     func addItemViewController(_ controller: AddItemViewController, didFinishEditingItem item: ChecklistItem)
  {
         
-        
+    print("new text",item.message)
+    
+    tableView.reloadRows(at: [IndexPath(row: tabCheckListItem.firstIndex(where: { $0 === item })!, section: 0)], with: UITableView.RowAnimation.automatic)
+    tableView.reloadData()
+    dismiss(animated: true, completion: nil)
     }
     
     
