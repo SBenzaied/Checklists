@@ -137,35 +137,7 @@ class ChecklistViewController : UITableViewController {
         cell.TaskLabel.text=item.message
     }
     
-//    func saveChecklistItems() {
-//        print("Save")
-//        let encoder = JSONEncoder()
-//        encoder.outputFormatting = .prettyPrinted
-//
-//        let data = try! encoder.encode(tabCheckListItem)
-//        try! data.write(to: dataFileUrl)
-//    }
-    
-    
-//    func loadChecklistItems() {
-//        do{
-//            let jsonFile = try Data.init(contentsOf: dataFileUrl)
-//            let decoder = JSONDecoder()
-//            let data = try decoder.decode([ChecklistItem].self, from: jsonFile)
-//            tabCheckListItem = data
-//        }
-//        catch{}
-//
-//
-//
-//    }
-    
-    
-    
-    
-    
-   
-   
+
 }
 
 extension ChecklistViewController : AddItemViewControllerDelegate{
@@ -184,9 +156,7 @@ extension ChecklistViewController : AddItemViewControllerDelegate{
         tableView.insertRows(at: [IndexPath(row: tabCheckListItem.count - 1, section: 0)], with: UITableView.RowAnimation.automatic)
              tableView.reloadData()
         dismiss(animated: true, completion: nil)
-  //      saveChecklistItems()
-        
-        
+
         
     }
     
@@ -199,7 +169,7 @@ extension ChecklistViewController : AddItemViewControllerDelegate{
     tableView.reloadRows(at: [IndexPath(row: tabCheckListItem.firstIndex(where: { $0 === item })!, section: 0)], with: UITableView.RowAnimation.automatic)
     tableView.reloadData()
     dismiss(animated: true, completion: nil)
- //   saveChecklistItems()
+
     }
     
     
